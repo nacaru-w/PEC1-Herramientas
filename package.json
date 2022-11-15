@@ -1,9 +1,13 @@
 {
   "name": "tarrare",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "version": "1.0.0",
   "description": "A biographical website for Tarrare",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "parcel",
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",
@@ -15,6 +19,6 @@
   "author": "Ignacio Casares Ruiz",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.8.0"
+    "parcel": "latest"
   }
 }
