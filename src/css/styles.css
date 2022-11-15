@@ -1,0 +1,29 @@
+code {
+    color: darkslategrey;
+    font-size: 1.2em;
+}
+
+body {
+    max-width: 70%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    line-height: 1.8em;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 1.5em;
+}
+
+h2 {
+    text-align: center;
+}
+
+.blockquoteauthorinfo {
+    text-align: end;
+}
+
+blockquote {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+}

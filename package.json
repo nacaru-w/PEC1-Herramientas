@@ -2,7 +2,6 @@
   "name": "tarrare",
   "version": "1.0.0",
   "description": "A biographical website for Tarrare",
-  "main": "index.js",
   "scripts": {
     "test": "test"
   },
@@ -14,5 +13,8 @@
     "tarrare"
   ],
   "author": "Ignacio Casares Ruiz",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.8.0"
+  }
 }
