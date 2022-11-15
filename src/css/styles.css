@@ -1,22 +1,51 @@
-code {
-    color: darkslategrey;
-    font-size: 1.2em;
-}
-
 body {
-    max-width: 70%;
-    margin: 0 auto;
+    margin: 0;
     background-color: whitesmoke;
     line-height: 1.8em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-h1 {
+header {
+    width: 70%;
+    margin: 0 auto;
+}
+
+header h1 {
     text-align: center;
     padding-top: 1.5em;
+    font-size: 3em;
 }
 
-h2 {
+header h2 {
     text-align: center;
+}
+
+nav {
+    margin: 0 auto;
+    max-width: 70%;
+}
+
+header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: darkslategrey;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    font-size: 1.1em;
+    letter-spacing: 0.09em;
+}
+
+nav ul li {
+    margin: 1em 1em 2em 1em;
 }
 
 .blockquoteauthorinfo {
@@ -26,4 +55,62 @@ h2 {
 blockquote {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.2em;
+}
+
+/* Main stuff starts here */
+
+main figure>* {
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+}
+
+main figcaption {
+    padding-top: 0.4em;
+}
+
+main figcaption .subcaption {
+    padding-top: 0.5em;
+}
+
+main figcaption {
+    margin: 0 auto;
+    width: 80%;
+    font-size: 0.8em;
+    text-align: center;
+    line-height: 1.2em;
+    padding-bottom: 2em;
+}
+
+/* Footer stuff starts here */
+
+footer {
+    background-color: #DDD8CF;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+footer div {
+    color: #4D243D;
+}
+
+footer .author {
+    padding-top: 3em;
+}
+
+footer .copyright {
+    padding-bottom: 3em;
+}
+
+footer div a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #6F3458;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: initial;
 }
