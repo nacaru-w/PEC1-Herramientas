@@ -6,8 +6,11 @@
   "description": "A biographical website for Tarrare",
   "scripts": {
     "test": "test",
-    "start": "parcel",
-    "build": "parcel build"
+    "parcel:dev": "parcel",
+    "parcel:build": "parcel build",
+    "clean": "rimraf dist .parcel-cache",
+    "start": "npm-run-all clean parcel:dev",
+    "build": "npm-run-all clean parcel:build"
   },
   "repository": {
     "type": "git",
