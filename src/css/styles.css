@@ -1,9 +1,11 @@
 body {
     margin: 0;
     background-color: whitesmoke;
-    line-height: 1.8em;
+    line-height: 2em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+/* Header stuff starts here */
 
 header {
     width: 70%;
@@ -46,6 +48,7 @@ nav ul {
 
 nav ul li {
     margin: 1em 1em 2em 1em;
+    white-space: nowrap;
 }
 
 .blockquoteauthorinfo {
@@ -58,6 +61,35 @@ blockquote {
 }
 
 /* Main stuff starts here */
+
+main {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+main p {
+    font-size: 1.15em;
+}
+
+main section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    max-width: 90rem;
+    margin: 0 auto;
+}
+
+main section .subsection {
+    flex: 1 1 auto;
+    padding: 0rem 1.5rem;
+    width: 40%;
+}
+
+main section .subsection h1 {
+    text-align: center;
+}
 
 main figure>* {
     margin: 0 auto;
