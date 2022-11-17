@@ -1,3 +1,24 @@
+@media (min-width: 0em) {
+    main {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+
+@media (min-width: 1500px) {
+    main {
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+}
+
 body {
     margin: 0;
     background-color: whitesmoke;
@@ -20,6 +41,7 @@ header h1 {
 
 header h2 {
     text-align: center;
+    font-size: 1.35em;
 }
 
 nav {
@@ -42,7 +64,7 @@ nav ul {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
-    font-size: 1.1em;
+    font-size: 1.4em;
     letter-spacing: 0.09em;
 }
 
@@ -61,12 +83,6 @@ blockquote {
 }
 
 /* Main stuff starts here */
-
-main {
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
 main p {
     font-size: 1.15em;
 }
@@ -89,6 +105,7 @@ main section .subsection {
 
 main section .subsection h1 {
     text-align: center;
+    color: #493A31;
 }
 
 main figure>* {
