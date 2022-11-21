@@ -67,6 +67,7 @@ nav {
 header a {
     color: inherit;
     text-decoration: none;
+    transition: color 0.4s ease-in-out;
 }
 
 header a:hover {
@@ -128,8 +129,22 @@ main .category_section {
 }
 
 main .category_section ul {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     list-style-type: none;
     padding-left: 0em;
+    font-size: 1.3em;
+}
+
+main .category_section a {
+    text-decoration: none;
+    color: var(--text);
+    background-image: linear-gradient(whitesmoke 50%, #DDD8CF 50%);
+    background-size: auto 175%;
+    transition: background 0.3s ease-in-out;
+}
+
+main .category_section a:hover {
+    background-position-y: 100%;
 }
 
 main figure>* {
@@ -183,6 +198,7 @@ footer .copyright {
 
 footer div a {
     text-decoration: none;
+    transition: color 0.4s ease-in-out;
 }
 
 footer a:hover {
