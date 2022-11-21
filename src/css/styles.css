@@ -123,6 +123,15 @@ main section .subsection h1 {
     color: #493A31;
 }
 
+main .category_section {
+    text-align: center;
+}
+
+main .category_section ul {
+    list-style-type: none;
+    padding-left: 0em;
+}
+
 main figure>* {
     margin: 0 auto;
     display: block;

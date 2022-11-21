@@ -118,6 +118,15 @@ main section .subsection h1 {
   color: #493a31;
 }
 
+main .category_section {
+  text-align: center;
+}
+
+main .category_section ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
 main figure > * {
   max-width: 100%;
   margin: 0 auto;
