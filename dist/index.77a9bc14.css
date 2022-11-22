@@ -4,9 +4,9 @@
     margin-right: 10%;
   }
 
-  #gluttony {
-    max-width: 90%;
-    max-height: 90%;
+  main .gluttony {
+    max-width: 70%;
+    max-height: 70%;
   }
 }
 
@@ -16,7 +16,7 @@
     margin-right: 20%;
   }
 
-  #gluttony {
+  main .gluttony {
     max-width: 50%;
     max-height: 50%;
   }
@@ -28,7 +28,7 @@
     margin-right: 25%;
   }
 
-  #gluttony {
+  main .gluttony {
     max-width: 50%;
     max-height: 50%;
   }
@@ -39,6 +39,10 @@ body {
   margin: 0;
   font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
   line-height: 2em;
+}
+
+a:visited {
+  color: unset;
 }
 
 header {
@@ -69,7 +73,7 @@ header a {
 }
 
 header a:hover {
-  color: #2f4f4f;
+  color: #008b8b;
 }
 
 nav ul {
@@ -148,7 +152,7 @@ main figure > * {
   display: block;
 }
 
-#gluttony {
+main .gluttony {
   width: auto;
   height: auto;
   padding-top: 2em;
@@ -190,17 +194,22 @@ footer .copyright {
 }
 
 footer div a {
+  color: #000;
   text-decoration: none;
   transition: color .4s ease-in-out;
 }
 
-footer a:hover {
-  color: #6f3458;
+footer div a:hover {
+  color: #008b8b;
   text-decoration: underline;
 }
 
-a:visited {
-  color: initial;
+footer div a:visited {
+  color: #000;
+}
+
+footer div a:visited:hover {
+  color: #008b8b;
 }
 
 /*# sourceMappingURL=index.77a9bc14.css.map */

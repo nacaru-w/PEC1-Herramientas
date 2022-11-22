@@ -4,9 +4,9 @@
         margin-right: 10%;
     }
 
-    #gluttony {
-        max-width: 90%;
-        max-height: 90%;
+    main .gluttony {
+        max-width: 70%;
+        max-height: 70%;
     }
 }
 
@@ -16,7 +16,7 @@
         margin-right: 20%;
     }
 
-    #gluttony {
+    main .gluttony {
         max-width: 50%;
         max-height: 50%;
     }
@@ -28,7 +28,7 @@
         margin-right: 25%;
     }
 
-    #gluttony {
+    main .gluttony {
         max-width: 50%;
         max-height: 50%;
     }
@@ -39,6 +39,10 @@ body {
     background-color: whitesmoke;
     line-height: 2em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+a:visited {
+    color: unset;
 }
 
 /* Header stuff starts here */
@@ -71,7 +75,7 @@ header a {
 }
 
 header a:hover {
-    color: darkslategrey;
+    color: darkcyan;
 }
 
 nav ul {
@@ -153,7 +157,7 @@ main figure>* {
     max-width: 100%;
 }
 
-#gluttony {
+main .gluttony {
     width: auto;
     height: auto;
     padding-top: 2em;
@@ -199,13 +203,18 @@ footer .copyright {
 footer div a {
     text-decoration: none;
     transition: color 0.4s ease-in-out;
+    color: black;
 }
 
-footer a:hover {
-    color: #6F3458;
+footer div a:hover {
+    color: darkcyan;
     text-decoration: underline;
 }
 
-a:visited {
-    color: initial;
+footer div a:visited {
+    color: black;
+}
+
+footer div a:visited:hover {
+    color: darkcyan;
 }
