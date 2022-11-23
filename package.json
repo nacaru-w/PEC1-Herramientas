@@ -23,5 +23,8 @@
   "license": "ISC",
   "devDependencies": {
     "parcel": "latest"
+  },
+  "dependencies": {
+    "sidebarjs": "^9.0.0"
   }
 }
