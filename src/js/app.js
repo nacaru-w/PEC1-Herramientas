@@ -1,3 +1,5 @@
+"use strict";
+
 import { SidebarElement, SidebarService } from 'sidebarjs';
 import 'sidebarjs/lib/sidebarjs.css';
 
@@ -9,9 +11,3 @@ const sidebarjs = new SidebarElement({
      */
 });
 
-// toggle sidebarjs on click
-document
-    .querySelector('class="hamburger_icon"')
-    .addEventListener('click', () => {
-        sidebarjs.toggle();
-    });

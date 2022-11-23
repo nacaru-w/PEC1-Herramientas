@@ -534,12 +534,9 @@ function hmrAcceptRun(bundle, id) {
 },{}],"8lRBv":[function(require,module,exports) {
 var _sidebarjs = require("sidebarjs");
 var _sidebarjsCss = require("sidebarjs/lib/sidebarjs.css");
+"use strict";
 // Create sidebarjs instance
 const sidebarjs = new (0, _sidebarjs.SidebarElement)({
-});
-// toggle sidebarjs on click
-document.querySelector('class="hamburger_icon"').addEventListener("click", ()=>{
-    sidebarjs.toggle();
 });
 
 },{"sidebarjs":"jcYvT","sidebarjs/lib/sidebarjs.css":"dszmz"}],"jcYvT":[function(require,module,exports) {

@@ -61,9 +61,14 @@ header h2 {
 }
 
 .hamburger_icon {
+  cursor: pointer;
   margin-top: 3em;
   margin-left: 3em;
   display: block;
+}
+
+.sidebar div > * {
+  line-height: 2.5em;
 }
 
 .sidebar p {
@@ -72,7 +77,23 @@ header h2 {
 
 .sidebar h1 {
   text-align: center;
+  padding-top: 2em;
   font-size: xx-large;
+}
+
+.sidebar ul {
+  font-weight: bold;
+  list-style-type: none;
+}
+
+.sidebar a {
+  color: inherit;
+  text-decoration: none;
+  transition: color .4s ease-in-out;
+}
+
+.sidebar a:hover {
+  color: #008b8b;
 }
 
 nav {
@@ -114,7 +135,16 @@ blockquote {
   font-size: 1.2em;
 }
 
-main p {
+main a {
+  color: inherit;
+  transition: color .4s ease-in-out;
+}
+
+main a:hover {
+  color: #008b8b;
+}
+
+main p, main ul {
   font-size: 1.15em;
 }
 
@@ -143,7 +173,6 @@ main .category_section {
 
 main .category_section ul {
   padding-left: 0;
-  font-family: Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif;
   font-size: 1.3em;
   list-style-type: none;
 }

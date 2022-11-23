@@ -66,6 +66,11 @@ header h2 {
     margin-top: 3em;
     margin-left: 3em;
     display: block;
+    cursor: pointer;
+}
+
+.sidebar div>* {
+    line-height: 2.5em;
 }
 
 .sidebar p {
@@ -75,6 +80,22 @@ header h2 {
 .sidebar h1 {
     font-size: xx-large;
     text-align: center;
+    padding-top: 2em;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    font-weight: bold;
+}
+
+.sidebar a {
+    text-decoration: none;
+    transition: color 0.4s ease-in-out;
+    color: inherit;
+}
+
+.sidebar a:hover {
+    color: darkcyan;
 }
 
 nav {
@@ -117,7 +138,21 @@ blockquote {
 }
 
 /* Main stuff starts here */
+main a {
+    color: inherit;
+    transition: color 0.4s ease-in-out;
+}
+
+main a:hover {
+    color: darkcyan;
+}
+
+
 main p {
+    font-size: 1.15em;
+}
+
+main ul {
     font-size: 1.15em;
 }
 
@@ -147,7 +182,6 @@ main .category_section {
 }
 
 main .category_section ul {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     list-style-type: none;
     padding-left: 0em;
     font-size: 1.3em;
