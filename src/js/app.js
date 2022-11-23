@@ -1,3 +1,5 @@
+import { SidebarElement, SidebarService } from 'sidebarjs';
+import 'sidebarjs/lib/sidebarjs.css';
 
 // Create sidebarjs instance
 const sidebarjs = new SidebarElement({
@@ -9,7 +11,7 @@ const sidebarjs = new SidebarElement({
 
 // toggle sidebarjs on click
 document
-    .querySelector('.js--sidebarjs-toggle')
+    .querySelector('class="hamburger_icon"')
     .addEventListener('click', () => {
         sidebarjs.toggle();
     });
