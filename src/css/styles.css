@@ -138,6 +138,10 @@ blockquote {
 }
 
 /* Main stuff starts here */
+main {
+    padding-bottom: 2em;
+}
+
 main a {
     color: inherit;
     transition: color 0.4s ease-in-out;
@@ -225,6 +229,7 @@ main figcaption {
     font-size: 0.8em;
     text-align: center;
     line-height: 1.2em;
+    padding-top: 1.5em;
     padding-bottom: 2em;
 }
 
