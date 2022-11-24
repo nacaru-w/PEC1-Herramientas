@@ -1,4 +1,4 @@
-@media (min-width: 0) {
+@media only screen and (min-width: 0) {
   main {
     margin-left: 10%;
     margin-right: 10%;
@@ -10,7 +10,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media only screen and (min-width: 1200px) {
   main {
     margin-left: 20%;
     margin-right: 20%;
@@ -22,7 +22,7 @@
   }
 }
 
-@media (min-width: 1500px) {
+@media only screen and (min-width: 1500px) {
   main {
     margin-left: 25%;
     margin-right: 25%;
@@ -34,9 +34,31 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-height: 500px) {
   .sidebar > * {
-    font-size: 140%;
+    font-size: 80%;
+  }
+}
+
+@media only screen and (min-height: 500px) {
+  .sidebar h1 {
+    text-align: center;
+    padding-top: 2em;
+    padding-left: 1em;
+    font-size: xx-large;
+  }
+}
+
+@media only screen and (min-height: 700px) {
+  .sidebar > * {
+    font-size: 130%;
+  }
+
+  .sidebar h1 {
+    text-align: center;
+    padding-top: 2em;
+    padding-left: 1em;
+    font-size: xx-large;
   }
 }
 
@@ -74,18 +96,18 @@ header h2 {
 }
 
 .sidebar div > * {
-  line-height: 2.5em;
-}
-
-.sidebar h1 {
-  text-align: center;
-  padding-top: 2em;
-  font-size: xx-large;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 
 .sidebar ul {
   font-weight: bold;
   list-style-type: disc;
+}
+
+.sidebar li {
+  padding-top: .6em;
+  padding-bottom: .6em;
 }
 
 .sidebar a {
