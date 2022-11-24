@@ -22,7 +22,9 @@
   "author": "Ignacio Casares Ruiz",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "latest"
+    "parcel": "latest",
+    "rimraf": "latest",
+    "npm-run-all": "latest"
   },
   "dependencies": {
     "sidebarjs": "^9.0.0"
