@@ -34,6 +34,14 @@
     }
 }
 
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    .sidebar>* {
+        font-size: 140%;
+    }
+}
+
 body {
     margin: 0;
     background-color: whitesmoke;
@@ -71,11 +79,6 @@ header h2 {
 
 .sidebar div>* {
     line-height: 2.5em;
-    font-size: 1.1em;
-}
-
-.sidebar p {
-    text-align: center;
 }
 
 .sidebar h1 {
@@ -85,12 +88,8 @@ header h2 {
 }
 
 .sidebar ul {
-    list-style-type: none;
+    list-style-type: disc;
     font-weight: bold;
-}
-
-.sidebar li {
-    line-height: 2em;
 }
 
 .sidebar a {

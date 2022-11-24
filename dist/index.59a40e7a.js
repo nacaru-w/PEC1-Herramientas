@@ -536,8 +536,7 @@ var _sidebarjs = require("sidebarjs");
 var _sidebarjsCss = require("sidebarjs/lib/sidebarjs.css");
 "use strict";
 // Create sidebarjs instance
-const sidebarjs = new (0, _sidebarjs.SidebarElement)({
-});
+const sidebarjs = new (0, _sidebarjs.SidebarElement)({});
 
 },{"sidebarjs":"jcYvT","sidebarjs/lib/sidebarjs.css":"dszmz"}],"jcYvT":[function(require,module,exports) {
 /*
