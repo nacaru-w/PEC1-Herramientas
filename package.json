@@ -20,7 +20,7 @@
     "tarrare"
   ],
   "author": "Ignacio Casares Ruiz",
-  "license": "ISC",
+  "license": "CC BY-NC-ND 2.0",
   "devDependencies": {
     "parcel": "latest",
     "rimraf": "latest",

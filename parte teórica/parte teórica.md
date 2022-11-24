@@ -51,7 +51,7 @@ A continuación se tomó la decisión de con qué gestor de paquetes trabajar el
 
 Tras comprobar que se estaba utilizando la versión de `npm` adecuada, a través de la consola se ejecutó el comando `init` del mismo gestor de paquetes, creando un archivo `json` a partir del cual construir la página web.
 
-![Archivo `json`. Algunas de las dependencias que aparecen en la imagen serían instaladas más tarde.](img/Screenshot%20from%202022-11-24%2012-55-57.png)
+![Archivo `json`. Algunas de las dependencias que aparecen en la imagen serían instaladas más tarde.](img/Screenshot from 2022-11-24 19-51-08.png)
 
 * __Resultados__: npm es una herramienta sencilla de utilizar. Se encuentra ya instalado en muchos dispositivos y su catálogo de dependencias es útil a la hora de añadir nuevos elementos a la página. Instala por defecto diversos módulos de node necesarios e incluye una serie de dependencias por defecto que pueden ser de utilidad en proyectos similares.
 
@@ -63,7 +63,15 @@ A través de npm se decidió utilizar un module bundler a través del cual const
 
 Se instaló Parcel de forma local y se prodecedió a ejecutar el comando `npx parcel src/index.html` para construir un servidor local que permitiría ver los cambios realizados a nuestra paǵina web en tiempo real. A continuación, se creó una hoja de estilo CSS y un archivo `.js` como dependencia al archivo `index.html` principal.
 
-Se instaló Rimraf a través de npm para tener una herramienta que limpiase la caché creada por parcel en el procesamiento de los archivos y la construcción del servidor local. 
+Se instaló Rimraf y npm-run-all a través de npm para tener una herramienta que limpiase la caché creada por parcel en el procesamiento de los archivos y la construcción del servidor local. Se incluyeron ambas dependencias en el archivo `json` en las siguientes líneas de código para que se dé su instalación ante la ejecución del comando `npm run build`:
+
+```json
+  "devDependencies": {
+    "parcel": "latest",
+    "rimraf": "latest",
+    "npm-run-all": "latest"
+  },
+```
 
 Asimismo se crearon diversos scripts que facilitarían el trabajo en el proyecto y se añadieron al archivo `json` (véase imagen 1):
 
@@ -99,7 +107,13 @@ const sidebarjs = new SidebarElement({
 });
 ```
 
-La dependencia generó un fichero `sidebarjs` en la carpeta `node_modules` con el código necesario para su implementación.
+La dependencia generó un fichero `sidebarjs` en la carpeta `node_modules` con el código necesario para su implementación. Además, generó código en el archivo `json` que permitía su instalación en la compilación para producción:
+
+```json
+  "dependencies": {
+    "sidebarjs": "^9.0.0"
+  }
+```
 
 Tras comprobar que la dependencia funcionaba correctamente y que no generaba lentitud o problemas de compatibilidad, se decidió mantener su uso en la página web.
 
@@ -119,7 +133,7 @@ Se configuró el archivo `json` del `root` para que el código se adaptase a nav
 "browserslist": "> 0.5%, last 2 versions, not dead",
 ```
 
-* Resultados: como parte de la acción de estas aplicaciones, se optimizó el código CSS, de forma que algunas secciones de código quedaron modificadas para mayor facilidad de procesamiento. Uno de los ejemplos es el siguiente:
+* __Resultados__: como parte de la acción de estas aplicaciones, se optimizó el código CSS, de forma que algunas secciones de código quedaron modificadas para mayor facilidad de procesamiento. Uno de los ejemplos es el siguiente:
 
 Este segmento del código:
 
@@ -140,3 +154,10 @@ main p, main ul {
   font-size: 1.15em;
 }
 ```
+
+## Publicación de la página
+
+La descripción del enunciado de la PEC pedía, igualmente, la publicación de la página en internet. Para este fin se utilizó el servicio gratuito de hosting Netlify.
+
+* __Justificación__: aunque GitHub ofrece un servicio de hosting gratuito, este ya estaba siendo utilizado para mi página web personal. Se consideró Netlify como segunda opción tras observar que incluía un servicio de actualización rápida a partir de un repositorio de github.
+
