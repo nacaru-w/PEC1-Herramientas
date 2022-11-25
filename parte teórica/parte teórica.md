@@ -118,8 +118,65 @@ La dependencia generó un fichero `sidebarjs` en la carpeta `node_modules` con e
 Tras comprobar que la dependencia funcionaba correctamente y que no generaba lentitud o problemas de compatibilidad, se decidió mantener su uso en la página web.
 
 ## Código HTML
+Se decidió finalmente repartir la página web a lo largo de ocho páginas `html` distintas. Estas fueron almacenadas en un fichero `src` de acuerdo al _boilerplate_ propuesto. Estas incluían:
+
+* Una página principal, llamada `index.html` que solo muestra una gran imagen y enlaces al resto de contenido de la web.
+* Una página de presentación del contenido, llamada `presentation.html`, en la que se muestran descripciones de las diferentes secciones entre las que se distribuye la web.
+* Una página, `category.html` a través de la cual se puede acceder a la información biográfica de Tarrare, dividida en diferentes secciones:
+  * `detail1.html`, en la que se habla de la vida temprana del biografiado.
+  * `detail2.html`, en la que se describe su apariencia y sus hábitos comportamentales.
+  * `detail3.html`. en la que se relatan los diferentes intentos de curar su patología.
+  * `detail4.html`, en la que se habla de su muerte y los últimos momentos de su vida.
+* Una página de enlaces, titulada `links.html`, en la que se hallan enlaces a las fuentes de información/imágenes y un pequeño aviso legal en el que se describe la licencia con la que se ha liberado el contenido de la web.
+
+En cuanto al etiquetado HTML, este se realizó de forma jerárquica:
+
+* Se incluyó una sección `head` en la que se contenía información sobre metadatos de la página, así como las llamadas a la hoja de estilos CSS y el documento que contiene los scripts JS:
+
+```html
+
+<head>
+    <meta charset="utf-8" />
+    <title>Tarrare: main</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <script type="module" src="js/app.js"></script>
+</head>
+
+```
+
+* Se incluyó una sección `body`, en la que incluir el resto de información no contenida en `head`. Aquí se procedió a incluir el contenido de la página _per se_, dividido en diferentes secciones:[^1]
+  * Una imagen (`img`) correspondiente al icono del menú situado en la parte superior izquierda de la página junto a una sección `div`, identificada con los atributos `sidebarjs` (necesario para la interacción con la dependencia mencionada en la sección anterior de este documento) y `class="sidebar"`, localizada previamente al resto del código principal de la página, en la que se desarrolla la barra de navegación desplegable lateral y los diferentes elementos (etiquetados con `a` al tratarse de enlaces) que la contienen. Esta contiene una lista no ordenada (`ul`) anidada que contiene otra lista no ordenada en su interior.
+  * Una sección `header`, que contiene:
+    * Los título y subtítulo principales de la página, identificados con las etiquetas `h1` y `h2`.
+    * Una sección de navegación, más general respecto a la hallada en la barra desplegable lateral, marcada con la etiqueta `nav`, que a su vez contiene una lista no ordenada (`ul`) con las diferentes opciones de navegación, etiquetadas como `a` al tratarse de enlaces.
+  * Una sección `main`, en la que se desarrolla el contenido central del cuerpo del proyecto, que varía ampliamente entre cada página html del proyecto. Esta puede poseer elementos visuales, contenidos en secciones `figure`, representados en forma de imágenes (etiquetados como `img`), vídeos incrustados (etiquetados como `iframe`), con un párrafo que hace de pie de imagen etiquetado con `figcaption`; listas no ordenadas (`ul`), elementos `div`, párrafos `p`, etc.
+    * Se emplearon las etiquetas `cite` para designar obras de creación, así como etiquetas `em` en casos en los que se consideró que debía darse énfasis.
+  * Una sección `footer`, en la que se desarrolla la sección inferior de la web. Esta contiene información sobre el autor del proyecto, así como una breve mención a la licencia. Ambas piezas de información fueron etiquetadas con `div` y atribuidas las clases `author` y `copyright`, respectivamente.
+
+* __Justificación__: la estructura dotada a la página viene definida por las exigencias descritas en el enunciado de la PEC. Se decidió dividir las subpáginas «detalle» en diferentes secciones para facilitar la navegación y no abarrotar con texto una sola página.
+
+* __Resultado__: la página se desarrolló de la forma deseada, el etiquetado correcto permitió posteriormente poder atribuir declaraciones CSS en la hoja de estilos y aplicar los scripts en `app.js` de forma efectiva. 
 
 ## Código CSS
+
+El código CSS del proyecto fue almacenado en un fichero `css`, subcarpeta del fichero `src` (la ruta, respecto a la raíz, es `src/css/styles.css`). El código incluye:
+
+* Una serie de `@media` queries_ con el objetivo de dotar a la página de la _responsiveness_ solicitada en el enunciado de la PEC. Estas se realizan en torno a las diferentes dimensiones del dipositivo, a través del uso de las propiedades `min-height` y `min-width`.
+* Un cuerpo de reglas CSS realizadas en función del etiquetado HTML realizado previamente.
+
+Los cambios diferentes cambios se visualizaron en tiempo real gracias al servidor proporcionado a través de Parcel, y se utilizó de forma significativa las opciones de desarrolladores del navegador firefox:
+
+* Se empleó el inspector para observar y acceder a partes del código específicas, así como para cambiar los diferentes valores de las reglas CSS y visualizar las modificaciones para más tarde aplicarlas.
+* Se empleó el «_responsive design mode_» dentro de estas opciones para comprobar la estructura y formato de la página desde diferentes dispositivos y dimensiones de pantalla.
+* Se hizo uso de la opción «fuentes» para observar el resultado de la aplicación de distintas fuentes para más tarde elegir las adecuadas para el proyecto.
+* Se empleó la opción «animaciones» para los casos en los que se utilizaron las propiedades `transition` para distintos elementos de la página, como los enlaces.
+* Se consultó la consola para comprobar posibles errores.
+
+Adicionalmente, se hizo uso significativo del recurso [caniuse.com](https://caniuse.com/) con el objetivo de comprobar la compatibilidad de las diferentes propiedades utilizadas en el proyecto. Se comprobó qué las características implementadas poseían una compatibilidad superior al 96% de los dispositivos utilizados por usuarios a nivel global en todos los casos.
+
+* __Justificación__: las `@media` _queries_ permiten adaptar las diferentes reglas CSS a contextos específicos con el objetivo de priorizar la accesibilidad a través de diferentes dispositivos. El recurso caniuse.com permite complementar la labor de adaptación a navegadores realizada a través de la compilación por Parcel para asegurar una correcta visualización.
+
+* __Resultados__: tras comprobar a través de las diferentes modificaciones mediante la opción «responsive design mode», se pudo corroborar que la página permanecía visualizable a través de distintos dispositivos que muestran dimensiones muy diversas.
 
 ## Postprocesador CSS
 
@@ -161,3 +218,6 @@ La descripción del enunciado de la PEC pedía, igualmente, la publicación de l
 
 * __Justificación__: aunque GitHub ofrece un servicio de hosting gratuito, este ya estaba siendo utilizado para mi página web personal. Se consideró Netlify como segunda opción tras observar que incluía un servicio de actualización rápida a partir de un repositorio de github.
 
+* __Resultado__: Netlify realizaba actualizaciones automáticas de la página al ejecutar el comando `git push` desde la consola de VSCode, lo cual facilitaba la tarea de llevar la versión de producción al espacio _online_.
+
+[^1]: Las secciones `header`, `main`, `footer`, así como el icono de opciones y la `div` con la clase `sidebar` correspondiente a la barra de navegación lateral son comunes a todas las páginas que conforman la web. 
