@@ -15,7 +15,11 @@ En este documento se describirán los pasos que se siguieron en la elaboración 
 
 La página final es accessible de forma pública a través del siguiente enlace:
 
-COMPLETAR
+[https://lively-fenglisu-dd4606.netlify.app/](https://lively-fenglisu-dd4606.netlify.app/)
+
+El repositorio de GitHub es el siguiente:
+
+[https://github.com/nacaru-w/PEC1-Herramientas](https://github.com/nacaru-w/PEC1-Herramientas)
 
 El proyecto se realizó en un ordenador con un SO Linux Ubuntu 22.04.1 LTS. Para la redacción de la parte teórica se creó un documento en formato [markdown](https://www.markdownguide.org/) que sería posteriormente transformado en un documento PDF a través de LaTeX con la herramienta de conversión libre [Pandoc](https://pandoc.org/).
 
