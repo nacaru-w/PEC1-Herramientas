@@ -38,6 +38,15 @@
   .sidebar > * {
     font-size: 80%;
   }
+
+  .sidebar h1 {
+    padding-left: .5em;
+  }
+
+  .sidebar li {
+    padding-top: .05em;
+    padding-bottom: .05em;
+  }
 }
 
 @media only screen and (min-height: 500px) {
@@ -46,6 +55,11 @@
     padding-top: 2em;
     padding-left: 1em;
     font-size: xx-large;
+  }
+
+  .sidebar li {
+    padding-top: .5em;
+    padding-bottom: .5em;
   }
 }
 
@@ -59,6 +73,29 @@
     padding-top: 2em;
     padding-left: 1em;
     font-size: xx-large;
+  }
+
+  .sidebar li {
+    padding-top: .6em;
+    padding-bottom: .6em;
+  }
+}
+
+@media only screen and (min-height: 800px) {
+  .sidebar > * {
+    font-size: 150%;
+  }
+
+  .sidebar h1 {
+    text-align: center;
+    padding-top: 2em;
+    padding-left: 1em;
+    font-size: xx-large;
+  }
+
+  .sidebar li {
+    padding-top: .6em;
+    padding-bottom: .6em;
   }
 }
 
@@ -103,11 +140,6 @@ header h2 {
 .sidebar ul {
   font-weight: bold;
   list-style-type: disc;
-}
-
-.sidebar li {
-  padding-top: .6em;
-  padding-bottom: .6em;
 }
 
 .sidebar a {
