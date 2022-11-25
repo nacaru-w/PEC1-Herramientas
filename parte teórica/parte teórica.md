@@ -51,7 +51,7 @@ A continuación se tomó la decisión de con qué gestor de paquetes trabajar el
 
 Tras comprobar que se estaba utilizando la versión de `npm` adecuada, a través de la consola se ejecutó el comando `init` del mismo gestor de paquetes, creando un archivo `json` a partir del cual construir la página web.
 
-![Archivo `json`. Algunas de las dependencias que aparecen en la imagen serían instaladas más tarde.](img/Screenshot from 2022-11-24 19-51-08.png)
+![Archivo `json`. Algunas de las dependencias que aparecen en la imagen serían instaladas más tarde.](img/Screenshot from 2022-11-25 09-20-43.png)
 
 * __Resultados__: npm es una herramienta sencilla de utilizar. Se encuentra ya instalado en muchos dispositivos y su catálogo de dependencias es útil a la hora de añadir nuevos elementos a la página. Instala por defecto diversos módulos de node necesarios e incluye una serie de dependencias por defecto que pueden ser de utilidad en proyectos similares.
 
@@ -153,6 +153,8 @@ En cuanto al etiquetado HTML, este se realizó de forma jerárquica:
     * Se emplearon las etiquetas `cite` para designar obras de creación, así como etiquetas `em` en casos en los que se consideró que debía darse énfasis.
   * Una sección `footer`, en la que se desarrolla la sección inferior de la web. Esta contiene información sobre el autor del proyecto, así como una breve mención a la licencia. Ambas piezas de información fueron etiquetadas con `div` y atribuidas las clases `author` y `copyright`, respectivamente.
 
+El código fue sometido al [servicio de validación](https://validator.w3.org) del World Wide Web Consortium (W3C) para corregir errores graves y optimizar la accesibilidad del mismo.
+
 * __Justificación__: la estructura dotada a la página viene definida por las exigencias descritas en el enunciado de la PEC. Se decidió dividir las subpáginas «detalle» en diferentes secciones para facilitar la navegación y no abarrotar con texto una sola página.
 
 * __Resultado__: la página se desarrolló de la forma deseada, el etiquetado correcto permitió posteriormente poder atribuir declaraciones CSS en la hoja de estilos y aplicar los scripts en `app.js` de forma efectiva. 
@@ -166,13 +168,15 @@ El código CSS del proyecto fue almacenado en un fichero `css`, subcarpeta del f
 
 Los cambios diferentes cambios se visualizaron en tiempo real gracias al servidor proporcionado a través de Parcel, y se utilizó de forma significativa las opciones de desarrolladores del navegador firefox:
 
-* Se empleó el inspector para observar y acceder a partes del código específicas, así como para cambiar los diferentes valores de las reglas CSS y visualizar las modificaciones para más tarde aplicarlas.
+* Se empleó el inspector DOM para observar y acceder a partes del código específicas, así como para cambiar los diferentes valores de las reglas CSS y visualizar las modificaciones para más tarde aplicarlas.
 * Se empleó el «_responsive design mode_» dentro de estas opciones para comprobar la estructura y formato de la página desde diferentes dispositivos y dimensiones de pantalla.
 * Se hizo uso de la opción «fuentes» para observar el resultado de la aplicación de distintas fuentes para más tarde elegir las adecuadas para el proyecto.
 * Se empleó la opción «animaciones» para los casos en los que se utilizaron las propiedades `transition` para distintos elementos de la página, como los enlaces.
 * Se consultó la consola para comprobar posibles errores.
 
 Adicionalmente, se hizo uso significativo del recurso [caniuse.com](https://caniuse.com/) con el objetivo de comprobar la compatibilidad de las diferentes propiedades utilizadas en el proyecto. Se comprobó qué las características implementadas poseían una compatibilidad superior al 96% de los dispositivos utilizados por usuarios a nivel global en todos los casos.
+
+De forma paralela al código HTML, el archivo fue sometido al [servicio de validación](https://jigsaw.w3.org/css-validator/) del World Wide Web Consortium (W3C), el cual certificó que no existían errores.
 
 * __Justificación__: las `@media` _queries_ permiten adaptar las diferentes reglas CSS a contextos específicos con el objetivo de priorizar la accesibilidad a través de diferentes dispositivos. El recurso caniuse.com permite complementar la labor de adaptación a navegadores realizada a través de la compilación por Parcel para asegurar una correcta visualización.
 
