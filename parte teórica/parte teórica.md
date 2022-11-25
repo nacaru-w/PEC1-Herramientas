@@ -43,7 +43,7 @@ Posteriormente, se creó un repositorio en git de forma local y [se subió](http
 
 Como gestor de código se decidió utilizar Visual Studio Code (VSCode). 
 
-* __Justificación__: la razón por la que se eligió esta aplicación respecto a las otras es porque ya estaba familiarizado con su uso, porque posee una terminal integrada a través de la cual pueden ejecutarse comandos y porque ya había instalado algunas herramientas para optimizar código en el pasado que me ayudarían en el proceso: GitLens y multiples _build tasks_.
+* __Justificación__: la razón por la que se eligió esta aplicación respecto a las otras es porque ya estaba familiarizado con su uso, porque posee una terminal integrada a través de la cual pueden ejecutarse comandos y porque ya había instalado algunas herramientas para optimizar código en el pasado que me ayudarían en el proceso: GitLens y múltiples _build tasks_.
 
 * __Resultados__: VSCode fue una herramienta muy útil para desarrollar el código. Todos los comandos de npm y pandoc, además de las diversas interacciones con git fueron ejecutados a través de la consola integrada. El programa incluye un servicio de diagnóstico local que te avisa de posibles problemas en el código, y a través de Gitlens se exploró el historial de ediciones en varias ocasiones para decidir o revertir múltiples cambios.
 
@@ -63,11 +63,11 @@ Tras comprobar que se estaba utilizando la versión de `npm` adecuada, a través
 
 A través de npm se decidió utilizar un module bundler a través del cual construir un _boilerplate_ sobre el cual trabajar en el proyecto. 
 
-* __Justificación__: aunque ya había utilizado Webpack [en proyectos anteriores](https://github.com/nacaru-w/twinkle-lite), decidí utilizar Parcel para afianzar lo aprendido en el módulo M2 de la asignatura. Además, parcel imprime en la consola posibles problemas y otros detalles de diagnóstico (avisa de archivos incompatibles o demasiado pesados). 
+* __Justificación__: aunque ya había utilizado Webpack [en proyectos anteriores](https://github.com/nacaru-w/twinkle-lite), decidí utilizar Parcel para afianzar lo aprendido en el módulo M2 de la asignatura. Además, Parcel imprime en la consola posibles problemas y otros detalles de diagnóstico (avisa de archivos incompatibles o demasiado pesados). 
 
 Se instaló Parcel de forma local y se prodecedió a ejecutar el comando `npx parcel src/index.html` para construir un servidor local que permitiría ver los cambios realizados a nuestra paǵina web en tiempo real. A continuación, se creó una hoja de estilo CSS y un archivo `.js` como dependencia al archivo `index.html` principal.
 
-Se instaló Rimraf y npm-run-all a través de npm para tener una herramienta que limpiase la caché creada por parcel en el procesamiento de los archivos y la construcción del servidor local. Se incluyeron ambas dependencias en el archivo `json` en las siguientes líneas de código para que se dé su instalación ante la ejecución del comando `npm run build`:
+Se instaló Rimraf y npm-run-all a través de npm para tener una herramienta que limpiase la caché creada por Parcel en el procesamiento de los archivos y la construcción del servidor local. Se incluyeron ambas dependencias en el archivo `json` en las siguientes líneas de código para que se dé su instalación ante la ejecución del comando `npm run build`:
 
 ```json
   "devDependencies": {
@@ -81,7 +81,7 @@ Asimismo se crearon diversos scripts que facilitarían el trabajo en el proyecto
 
 * `npm run clean` limpia la caché creada por Parcel a través de Rifraf (`rimraf dist .parcel-cache`)
 
-* `npm run build` se asoció a `npm-run-all clean parcel:build` permite a parcel construir la aplicación para producción y optimizar los archivos del proyecto. También ejecuta `clean` que limpia la caché a través de Rifraf.
+* `npm run build` se asoció a `npm-run-all clean parcel:build` permite a Parcel construir la aplicación para producción y optimizar los archivos del proyecto. También ejecuta `clean` que limpia la caché a través de Rifraf.
 
 * `npm run start` se asoció a `npm-run-all clean parcel:dev`, esto permitiría igualmente limpiar la caché cada vez que se ejecutase el servidor local.
 
@@ -95,7 +95,7 @@ En general, los resultados de utilizar Parcel fueron los siguientes:
 
 Como requisito en la PAC, debía de realizarse la implementación de algún recurso externo en forma de dependencia. 
 
-* Justificación: para este fin, se buscaron varias opciones a través del catálogo de npm. Se descartaron algunas de ellas por estar posiblemente obsoletas y se decidió utilizar [sidebarjs](https://www.npmjs.com/package/sidebarjs). Se empleó esta dependencia por ser ligera, porque permitía añadir un menú de navegación lateral adicinal, por estar adaptada a diferentes navegadores y a dispositivos móviles y tablets; y porque es gestionable a partir del archivo `app.js`, por lo que nos permitiría paralelamente realizar la implementación por javascript que también pedía el enunciado de la PEC.
+* Justificación: para este fin, se buscaron varias opciones a través del catálogo de npm. Se descartaron algunas de ellas por estar posiblemente obsoletas y se decidió utilizar [sidebarjs](https://www.npmjs.com/package/sidebarjs). Se empleó esta dependencia por ser ligera, porque permitía añadir un menú de navegación lateral adicional, por estar adaptada a diferentes navegadores y a dispositivos móviles y tablets; y porque es gestionable a partir del archivo `app.js`, por lo que nos permitiría paralelamente realizar la implementación por javascript que también pedía el enunciado de la PEC.
 
 Se instaló mediante la consola a través del código `npm install sidebarjs`. Se escribió el código HTML necesario (la dependencia requiere de la utilización de ciertos atributos), se realizó el _import_ del código en el archivo `app.js` a través de las líneas:
 
@@ -111,7 +111,7 @@ const sidebarjs = new SidebarElement({
 });
 ```
 
-La dependencia generó un fichero `sidebarjs` en la carpeta `node_modules` con el código necesario para su implementación. Además, generó código en el archivo `json` que permitía su instalación en la compilación para producción:
+* __Resultados__: la dependencia generó un fichero `sidebarjs` en la carpeta `node_modules` con el código necesario para su implementación. Además, generó código en el archivo `json` que permitía su instalación en la compilación para producción:
 
 ```json
   "dependencies": {
@@ -122,7 +122,7 @@ La dependencia generó un fichero `sidebarjs` en la carpeta `node_modules` con e
 Tras comprobar que la dependencia funcionaba correctamente y que no generaba lentitud o problemas de compatibilidad, se decidió mantener su uso en la página web.
 
 ## Código HTML
-Se decidió finalmente repartir la página web a lo largo de ocho páginas `html` distintas. Estas fueron almacenadas en un fichero `src` de acuerdo al _boilerplate_ propuesto. Estas incluían:
+Se decidió finalmente repartir la web a lo largo de ocho páginas `html` distintas. Estas fueron almacenadas en un fichero `src` de acuerdo al _boilerplate_ propuesto. Estas incluían:
 
 * Una página principal, llamada `index.html` que solo muestra una gran imagen y enlaces al resto de contenido de la web.
 * Una página de presentación del contenido, llamada `presentation.html`, en la que se muestran descripciones de las diferentes secciones entre las que se distribuye la web.
