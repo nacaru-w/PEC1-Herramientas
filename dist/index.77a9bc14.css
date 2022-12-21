@@ -167,6 +167,22 @@ header a:hover {
   color: #008b8b;
 }
 
+header figure {
+  width: clamp(4em, 8%, 10em);
+  margin: 0 auto;
+  transition: width 1s ease-in-out;
+}
+
+header img {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+header figure:hover {
+  width: clamp(4.5em, 9%, 11em);
+}
+
 nav ul {
   letter-spacing: .09em;
   flex-wrap: nowrap;

@@ -168,6 +168,22 @@ header a:hover {
     color: darkcyan;
 }
 
+header figure {
+    width: clamp(4em, 8%, 10em);
+    margin: 0 auto;
+    transition: width 1s ease-in-out;
+}
+
+header img {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+}
+
+header figure:hover {
+    width: clamp(4.5em, 9%, 11em);
+}
+
 nav ul {
     list-style-type: none;
     padding-left: 0;
