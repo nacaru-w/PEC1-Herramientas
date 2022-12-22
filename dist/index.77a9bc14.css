@@ -39,10 +39,6 @@
     font-size: 80%;
   }
 
-  .sidebar h1 {
-    padding-left: .5em;
-  }
-
   .sidebar li {
     padding-top: .05em;
     padding-bottom: .05em;
@@ -52,8 +48,6 @@
 @media only screen and (min-height: 500px) {
   .sidebar h1 {
     text-align: center;
-    padding-top: 2em;
-    padding-left: 1em;
     font-size: xx-large;
   }
 
@@ -70,8 +64,6 @@
 
   .sidebar h1 {
     text-align: center;
-    padding-top: 2em;
-    padding-left: 1em;
     font-size: xx-large;
   }
 
@@ -88,8 +80,6 @@
 
   .sidebar h1 {
     text-align: center;
-    padding-top: 2em;
-    padding-left: 1em;
     font-size: xx-large;
   }
 
@@ -130,6 +120,21 @@ header h2 {
   margin-top: 3em;
   margin-left: 3em;
   display: block;
+}
+
+.sidebar figure.index_logo {
+  width: 30%;
+  clip-path: circle(26.5% at 50% 28%);
+  margin: 1em auto 0;
+}
+
+.sidebar figure.index_logo img {
+  width: 100%;
+  height: auto;
+}
+
+.sidebar h1 {
+  margin: -1em auto 0;
 }
 
 .sidebar div > * {
@@ -265,6 +270,10 @@ main .category_section a:hover {
   background-position-y: 100%;
 }
 
+main figure img.main {
+  clip-path: inset(0 round 5%);
+}
+
 main figure > * {
   max-width: 100%;
   margin: 0 auto;
@@ -309,10 +318,6 @@ footer .author {
   padding-top: 3em;
 }
 
-footer .copyright {
-  padding-bottom: 3em;
-}
-
 footer div a {
   color: #000;
   text-decoration: none;
@@ -330,6 +335,50 @@ footer div a:visited {
 
 footer div a:visited:hover {
   color: #008b8b;
+}
+
+footer section {
+  width: 80%;
+  flex-flow: wrap;
+  place-content: center;
+  align-items: center;
+  margin: 0 auto;
+  font-size: .9em;
+  display: flex;
+}
+
+footer section h2 {
+  border-bottom: 2px solid #493a31;
+  font-size: 1.1em;
+  font-weight: normal;
+}
+
+footer section div {
+  padding: 0 1em;
+  display: block;
+}
+
+footer section ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+footer section div.media_container {
+  border-top: 2px solid #493a31;
+}
+
+footer section ul.media {
+  padding-bottom: 3em;
+  display: flex;
+}
+
+footer section ul.media li {
+  margin: 0 1em;
+  transition: opacity .25s ease-in-out;
+}
+
+footer section ul.media li:hover {
+  opacity: .5;
 }
 
 [sidebarjs-backdrop], [sidebarjs] {

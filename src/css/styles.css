@@ -39,10 +39,6 @@
         font-size: 80%;
     }
 
-    .sidebar h1 {
-        padding-left: 0.5em;
-    }
-
     .sidebar li {
         padding-bottom: 0.05em;
         padding-top: 0.05em;
@@ -53,8 +49,6 @@
     .sidebar h1 {
         font-size: xx-large;
         text-align: center;
-        padding-top: 2em;
-        padding-left: 1em;
     }
 
     .sidebar li {
@@ -71,8 +65,6 @@
     .sidebar h1 {
         font-size: xx-large;
         text-align: center;
-        padding-top: 2em;
-        padding-left: 1em;
     }
 
     .sidebar li {
@@ -89,8 +81,6 @@
     .sidebar h1 {
         font-size: xx-large;
         text-align: center;
-        padding-top: 2em;
-        padding-left: 1em;
     }
 
     .sidebar li {
@@ -132,6 +122,21 @@ header h2 {
     margin-left: 3em;
     display: block;
     cursor: pointer;
+}
+
+.sidebar figure.index_logo {
+    width: 30%;
+    margin: 1em auto 0 auto;
+    clip-path: circle(26.5% at 50% 28%);
+}
+
+.sidebar figure.index_logo img {
+    width: 100%;
+    height: auto;
+}
+
+.sidebar h1 {
+    margin: -1em auto 0 auto;
 }
 
 .sidebar div>* {
@@ -274,6 +279,10 @@ main .category_section a:hover {
     background-position-y: 100%;
 }
 
+main figure img.main {
+    clip-path: inset(0 0 0 0 round 5% 5% 5% 5%);
+}
+
 main figure>* {
     margin: 0 auto;
     display: block;
@@ -316,12 +325,15 @@ footer div {
     color: #4D243D;
 }
 
+/* footer .footer_background {
+    background-image: url('../img/Benjamin_Franklin_-_Join_or_Die.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+} */
+
 footer .author {
     padding-top: 3em;
-}
-
-footer .copyright {
-    padding-bottom: 3em;
 }
 
 footer div a {
@@ -341,4 +353,52 @@ footer div a:visited {
 
 footer div a:visited:hover {
     color: darkcyan;
+}
+
+footer section {
+    margin: 0 auto;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-flow: wrap;
+    justify-content: center;
+    width: 80%;
+    font-size: 0.9em;
+}
+
+footer section h2 {
+    font-size: 1.1em;
+    border-bottom: solid #493A31 2px;
+    font-weight: normal;
+}
+
+footer section div {
+    display: block;
+    padding: 0 1em 0 1em;
+}
+
+/* footer section h2 {
+    white-space: nowrap; */
+
+footer section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+footer section div.media_container {
+    border-top: solid #493A31 2px;
+}
+
+footer section ul.media {
+    display: flex;
+    padding-bottom: 3em;
+}
+
+footer section ul.media li {
+    margin: 0 1em;
+    transition: opacity 0.25s ease-in-out;
+}
+
+footer section ul.media li:hover {
+    opacity: 0.5;
 }
