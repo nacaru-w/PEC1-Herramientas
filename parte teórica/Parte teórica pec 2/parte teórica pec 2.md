@@ -207,4 +207,66 @@ Además de esto, se ha hecho empleo de `@media` _queries_, al comienzo del docum
 }
 ```
 
+Para la transformación, cambio de resolución, adaptación y maquetado de las imágenes se usaron las aplicaciones [imagemagick](https://imagemagick.org/index.php), Figma, [Trimage](https://trimage.org/) y [sharp](https://www.npmjs.com/package/sharp).
+## Inclusión y animación de imagen SVG en la página de presentación
+
+También como parte de los requisitos de la práctica, se implementó una imagen en formato SVG en la página `presentation.html` del proyecto. Esto se hizo mediante la adición de código HTML que definía de forma manual una imagen SVG de la siguiente forma:
+
+```html
+        <div class="container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+                <defs id="defs3051">
+                    <style type="text/css" id="current-color-scheme">
+                        .ColorScheme-Text {
+                            color: #4d4d4d;
+                        }
+                    </style>
+                </defs>
+                <path style="fill:currentColor;fill-opacity:1;stroke:none"
+                    d="M 11 3 C 6.568 3 3 6.568 3 11 C 3 15.432 6.568 19 11 19 C 15.432 19 19 15.432 19 11 C 19 6.568 15.432 3 11 3 z M 11 4 C 14.878 4 18 7.122 18 11 C 18 14.878 14.878 18 11 18 C 7.122 18 4 14.878 4 11 C 4 7.122 7.122 4 11 4 z M 10 6 L 10 8 L 12 8 L 12 6 L 10 6 z M 10 9 L 10 16 L 12 16 L 12 9 L 10 9 z "
+                    class="ColorScheme-Text" />
+            </svg>
+        </div>
+```
+
+Esta se incluyó en un element `div` con la clase `container` de forma que se pudiera manipular el código CSS más fácilmente.
+
+Se decidió, entonces, incluir una animación simple, al ser esto también parte de los requisitos de la PEC. En este caso, se definieron los `@keyframes` mediante el siguiente código:
+
+```css
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    80% {
+        transform: scale(1.1) rotate(-5deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+```
+
+Para más tarde hacer una llamada como valor a `pulse` a través de la propiedad `animation`, de la forma siguiente:
+
+```css
+main div.container svg:hover {
+    animation: pulse 2s infinite;
+}
+```
+
+Se utilizó el valor `infinite` de forma que la animación permaneciera activa de forma contínua cuando el usuario coloque su ratón encima de la imagen.
+
+## Notas finales
+
+Hay que tener en cuenta que en esta documentación no se han incluído todas las adiciones a la página web. Se han tomado código con los ejemplos más representativos de cada acción, pero para comprobar todos los cambios es necesario revisar el código disponible en el repositorio de GitHub enlazado al principio del documento.
+
+Las atribuciones debidas y otros aspectos legales derivados del uso de imágenes de terceros han sido indicados en el archivo `links.html` de la propia web.
+
 [^1]: A todas las imágenes que se encuentran en el espacio `main` en este proyecto y que no pertenecen a la página principal (`index.html`) se les ha atribuido una clase `gluttony` para poder aplicar reglas CSS de forma más sencilla, distinguiéndolas de otros elementos multimedia que pueden encontrarse en este espacio como logos y/o iconos.

@@ -299,7 +299,7 @@ main figure img.main {
     clip-path: inset(0 0 0 0 round 5% 5% 5% 5%);
 }
 
-main figure img.gluttony {
+main img.gluttony {
     clip-path: inset(0 0 0 0 round 3% 3% 3% 3%);
 }
 
@@ -427,4 +427,54 @@ footer section ul.media li {
 
 footer section ul.media li:hover {
     opacity: 0.5;
+}
+
+@keyframes underline {
+    0% {
+        transform: scale(0.1);
+        border-bottom: solid black 1px;
+    }
+
+    40% {
+        transform: scale(0.5);
+        border-bottom: solid black 2px;
+    }
+
+    80% {
+        transform: scale(1);
+        border-bottom: solid black 3px;
+    }
+}
+
+#animated_underline {
+    animation: underline 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    80% {
+        transform: scale(1.1) rotate(-5deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+
+main div.container {
+    margin: 0 auto;
+    width: 5em;
+}
+
+main div.container svg:hover {
+    animation: pulse 2s infinite;
 }
