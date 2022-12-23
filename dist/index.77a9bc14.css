@@ -5,8 +5,25 @@
   }
 
   main .gluttony {
-    max-width: 70%;
-    max-height: 70%;
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  nav ul {
+    font-size: 1.1em;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  main .gluttony {
+    max-width: 60%;
+    max-height: 60%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  nav ul {
+    font-size: 1.4em;
   }
 }
 
@@ -193,7 +210,6 @@ nav ul {
   flex-wrap: nowrap;
   justify-content: space-around;
   padding-left: 0;
-  font-size: 1.4em;
   list-style-type: none;
   display: flex;
 }
@@ -274,16 +290,18 @@ main figure img.main {
   clip-path: inset(0 round 5%);
 }
 
-main figure > * {
+main figure img.gluttony {
+  clip-path: inset(0 round 3%);
+}
+
+main figure > *, main picture > * {
   max-width: 100%;
   margin: 0 auto;
   display: block;
 }
 
 main .gluttony {
-  width: auto;
-  height: auto;
-  padding-top: 2em;
+  margin-top: 3em;
 }
 
 main figcaption {
@@ -308,6 +326,7 @@ footer {
   text-align: center;
   background-color: #ddd8cf;
   font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  line-height: 1.4em;
 }
 
 footer div {
@@ -348,9 +367,10 @@ footer section {
 }
 
 footer section h2 {
+  color: #000;
   border-bottom: 2px solid #493a31;
-  font-size: 1.1em;
-  font-weight: normal;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 footer section div {

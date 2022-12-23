@@ -118,3 +118,24 @@ footer section ul.media li:hover {
 Además, como puede comprobarse en las dos últimas reglas CSS del código anterior, se ha añadido un mecanismo de transición al pasar el ratón por encima, de forma que los iconos pierden parcialmente la opacidad con el objetivo de destacar su función de enlace.
 
 ![Muestra de la barra de iconos a redes sociales](img/Screenshot 2022-12-22 at 03-21-55 Tarrare main.png)
+
+## Optimización de imágenes
+
+Para este objetivo se instaló el paquete [sharp](https://www.npmjs.com/package/sharp). 
+
+Además, se modificó el archivo JSON para que este incluyese a sharp como parte de las dependencias necesarias para su ejecución:
+
+```json
+  "dependencies": {
+    "sharp": "^0.31.3",
+    "sidebarjs": "^9.0.0"
+  }
+```
+
+Se creó, además, un archivo `sharp.config.json` en el `root` del proyecto para optimizar todas las imágenes de la página.
+
+```json
+{
+    "quality": 85
+}
+```

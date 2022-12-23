@@ -22,11 +22,12 @@
   "author": "Ignacio Casares Ruiz",
   "license": "CC BY-NC-ND 2.0",
   "devDependencies": {
+    "npm-run-all": "latest",
     "parcel": "latest",
-    "rimraf": "latest",
-    "npm-run-all": "latest"
+    "rimraf": "latest"
   },
   "dependencies": {
+    "sharp": "^0.31.3",
     "sidebarjs": "^9.0.0"
   }
 }
