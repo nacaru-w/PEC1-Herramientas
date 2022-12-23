@@ -269,4 +269,6 @@ Hay que tener en cuenta que en esta documentación no se han incluído todas las
 
 Las atribuciones debidas y otros aspectos legales derivados del uso de imágenes de terceros han sido indicados en el archivo `links.html` de la propia web.
 
+Con el objetivo de dotar de aún mayor _responsiveness_ a la página, se han utilizado `@media` _queries_ que no han sido mencionadas en el desarrollo de la práctica, pero han ayudado a ajustar de forma más eficaz los elementos de la web al dispositivo desde el que se visualizan. Pueden, de igual forma, consultarse en el documento `styles.css` del repositorio enlazado.
+
 [^1]: A todas las imágenes que se encuentran en el espacio `main` en este proyecto y que no pertenecen a la página principal (`index.html`) se les ha atribuido una clase `gluttony` para poder aplicar reglas CSS de forma más sencilla, distinguiéndolas de otros elementos multimedia que pueden encontrarse en este espacio como logos y/o iconos.
