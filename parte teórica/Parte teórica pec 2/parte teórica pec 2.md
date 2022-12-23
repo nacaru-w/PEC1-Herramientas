@@ -87,6 +87,16 @@ A través del valor `circle(26.5% at 50% 28%)`, se consigue que la imagen se cen
 
 [Social Media Icons 2021 por SHOCKStudio.pl](https://www.figma.com/community/file/929729132405358534). Licencia CC-BY 4.0.
 
+## Uso de `clip-path` de forma global
+
+Con el objetivo de mejorar la exposición estética de las imágenes de la página. Se ha utilizado la propiedad `clip-path` para redondear los bordes, de forma más suave respecto a lo realizado en la página principal, en todas las imágenes que se encuentran en el espacio `main` de la web. El código CSS que se ha utilizado para lograr este objetivo es el siguiente:[^1]
+
+```css
+main figure img.gluttony {
+    clip-path: inset(0 0 0 0 round 3% 3% 3% 3%);
+}
+```
+
 ## Adición de elementos gráficos en el _footer_
 
 Dentro de los nuevos requisitos de la PAC se encontraba el de habilitar un footer que poseyese enlaces a todas las páginas. Esto se ha hecho mediante la adición de dos secciones `section`, una en la que se contienen dos `ul` con todos los enlaces de la web divididos en dos columnas, y otra en la que se han contenido enlaces a redes sociales.
@@ -139,3 +149,62 @@ Se creó, además, un archivo `sharp.config.json` en el `root` del proyecto para
     "quality": 85
 }
 ```
+
+## Adaptación _responsive_ de las imágenes
+
+Una de las exigencias del enunciado de la PEC era la de dotar a las imágenes de capacidad _responsive_, es decir, que estas puedan adaptarse al dispositivo a través del cual se visualizan.
+
+Para cumplir este objetivo, se hizo uso de etiquetas `picture`, dentro de las cuales se colocaron elementos `source` que, a través de `media` _queries_, permiten adaptar adecuadamente la imagen al dispositivo.
+
+Dependiendo de la imagen, se prefirió utilizar un enfoque basado en la dirección de arte o uno en el que se utiliza el _resolution switching_ (de tamaño o de resolución) para este objetivo.
+
+Un ejemplo de adaptación basada en el tamaño se da en la página principal (`index.html`). Aquí, se ha utilizado una imagen de menor tamaño que será empleada en pantallas en las que la propiedad `width` del dispositivo es menor a 799 píxeles:
+
+```html
+<picture>
+    <source media="(max-width: 799px)" srcset='img/Mémoire_sur_la_polyphagie_498px.jpg'>
+    <source media="(min-width: 800px)" srcset='img/Mémoire_sur_la_polyphagie_640px.jpg'>
+    <img class="main" src='img/Mémoire_sur_la_polyphagie_640px.jpg'>
+</picture>
+```
+
+En el caso de la página de detalle 3, se ha utilizado un enfoque basado en la dirección de arte. En este caso, al tratarse de una imagen de un dibujo renacentista con una cantidad significativa de detalles, se ha tomado una versión recortada —en la que se muestran sólo los detalles más significativos—, que aparecerá cuando se visualize la página a través de dispositivos de menor tamaño:
+
+```html
+    <picture>
+        <source media="(max-width: 799px)" srcset='img/the_elder_cropped.jpg'>
+        <source media="(min-width: 800px)" srcset='img/the_elder.jpg'>
+        <img class="gluttony " src="img/the_elder.jpg" title="Gluttony in medieval times">
+    </picture>
+```
+
+![Comparación de la imagen original (izquierda) con la imagen a la que se le ha aplicado dirección de arte (derecha)](img/comparaci%C3%B3n%20direcci%C3%B3n%20de%20arte.png)
+
+Además de esto, se ha hecho empleo de `@media` _queries_, al comienzo del documento CSS, que adaptan el tamaño de la anchura `width` del contenedor de las imágenes del espacio `main` de forma que estas puedan abarcar un mayor espacio, tomándolo del margen, en situaciones en las que el espacio del _viewport_ es menor. Cito aquí un ejemplo de las _queries_ utilizadas:
+
+```css
+@media only screen and (min-width: 0em) {
+    main {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    main .gluttony {
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+    nav ul {
+        font-size: 1.1em;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    main .gluttony {
+        max-width: 60%;
+        max-height: 60%;
+    }
+}
+```
+
+[^1]: A todas las imágenes que se encuentran en el espacio `main` en este proyecto y que no pertenecen a la página principal (`index.html`) se les ha atribuido una clase `gluttony` para poder aplicar reglas CSS de forma más sencilla, distinguiéndolas de otros elementos multimedia que pueden encontrarse en este espacio como logos y/o iconos.
