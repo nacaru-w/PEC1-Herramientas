@@ -208,6 +208,7 @@ Además de esto, se ha hecho empleo de `@media` _queries_, al comienzo del docum
 ```
 
 Para la transformación, cambio de resolución, adaptación y maquetado de las imágenes se usaron las aplicaciones [imagemagick](https://imagemagick.org/index.php), Figma, [Trimage](https://trimage.org/) y [sharp](https://www.npmjs.com/package/sharp).
+
 ## Inclusión y animación de imagen SVG en la página de presentación
 
 También como parte de los requisitos de la práctica, se implementó una imagen en formato SVG en la página `presentation.html` del proyecto. Esto se hizo mediante la adición de código HTML que definía de forma manual una imagen SVG de la siguiente forma:
